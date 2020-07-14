@@ -1,0 +1,37 @@
+<div class="col-lg-10 mat-elevation-z8">
+    <h3 class="titleOption">Mensajes Enviados</h3>
+
+    <div *ngIf="!messages">
+        <p>Aun no has enviado ningun mensaje! Pulsa <a (click)="enviarNuevoMje()">aqui</a> para enviar uno</p>
+    </div>
+
+    <div *ngIf="messages" class="mensajeContainer">
+        <mat-card class="mensaje" *ngFor="let message of messages">
+            <div class="infoEnvio">
+                <div class="datosEmitter">
+                    <h4 [routerLink]="['/profile', message.receiver._id]">Para: {{message.receiver.nick}}</h4>
+                </div>
+                <h4>{{(message.created_at | amFromUnix) | amLocale:'es' | amTimeAgo: true}}</h4>
+
+            </div>
+
+            <p>{{message.text}}</p>
+        </mat-card>
+
+         <!-- paginacion -->
+        <div *ngIf="pages > 1" class="paginator">
+            <ul class="pagination-users-follows">
+                <li style="color: black;" *ngIf="page > 1">
+                    <a class="paginator-users-follows" [routerLink]="['/mensajes/enviados', prevPage]">
+                        Anterior
+                    </a>
+                </li>
+                <li style="color: black;" *ngIf="pages != page">
+                    <a class="paginator-users-follows" [routerLink]="['/mensajes/enviados', nextPage]">
+                        Siguiente
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

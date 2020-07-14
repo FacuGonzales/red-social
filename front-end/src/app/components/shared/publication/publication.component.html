@@ -1,0 +1,28 @@
+
+<div class="pintarPublication contenedorTotal">
+    <div class="col-sm-12 col-md-12 col-lg-12 containerGeneral">
+    
+        <div class="col-sm-12 col-md-12 col-lg-12 publicationConteiner">
+    
+            <form [formGroup]="publicationForms" (ngSubmit)="publicar($event);">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12" class="messagePublication">
+                        <label for="" class="labelMessagePublication">Que estas pensando hoy?..</label>
+                        <textarea class="inputPublication" name="text" formControlName="message" cols="50" rows="5" #message></textarea>
+                    </div>
+    
+                    <div class="col-sm-12 col-md-12 col-lg-12" class="archivoPublication">
+                        <label for="" class="labelArchivoPublication">Comparte una foto</label>
+                        <input class="inputArchivoPublication" type="file" placeholder="subir imagen" (change)="fileChangeEvent($event)">
+                    </div>
+                   
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <button class="buttonPublication" type="submit" mat-raised-button color="primary">Publicar</button>
+                    </div>
+                </div> <!--fin del div = row-->
+            </form>
+    
+        </div> <!--fin de div=loginContainer-->
+    
+    </div> <!--fin de div=containerPageLogin-->
+</div>

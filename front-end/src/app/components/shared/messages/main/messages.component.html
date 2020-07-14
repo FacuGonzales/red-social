@@ -1,0 +1,25 @@
+<div class="row mensajesComponent contenedorTotal">
+    <div class="col-lg-4">
+        <h1 class="h1-strong h1-message">Tus mensajes</h1>
+    
+        <div class="sidebar-messages">
+            <ul class="nav-message">
+                <li role="presentation" [routerLink]="['enviar']" [routerLinkActive]="['active']">
+                    <a>Enviar mensajes</a>
+                </li>
+                <li role="presentation" [routerLink]="['enviados']" [routerLinkActive]="['active']">
+                    <a>Mensajes enviados</a>
+                </li>
+                <li role="presentation" [routerLink]="['recibidos']" [routerLinkActive]="['active']">
+                    <a>Mensajes recibidos</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="col-lg-8">
+        <!-- carga de componentes -->
+    
+        <router-outlet></router-outlet>
+    </div>
+</div>

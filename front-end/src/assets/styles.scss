@@ -1,0 +1,733 @@
+@import './css/main';
+
+// ************************************************* //
+// ESTILOS GENERALES //
+
+html, body { 
+    height: 100%; 
+}
+
+body { 
+    margin: 0; 
+    // font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+}
+
+.h1-strong{
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    text-transform: uppercase;
+}
+
+// Aplica a formularios en general
+mat-form-field{
+    width: 100% !important;
+}
+
+// Aplica a la clase jumbotron de bootstrap
+.jumbotron {
+    padding: 25px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+// Contenedor general apra aplicar ancho y largo comun
+.containerGeneral{
+    height: 100%;
+    max-width: 100rem; /*= 1200px*/
+    width: 100%;
+}
+
+.contenedorTotal{
+    width: 100% !important;
+}
+
+// ************************************************* //
+// ************************************************* //
+
+// ESTILOS PARA LA BARRA DE NAVEGACION (app.component) //
+
+// Barra completa de navegacion
+nav.navbar{
+    border-radius: 0px !important;
+    background-color: #242526  !important;
+    border: none;
+}
+
+// Etiqueta a, que contiene el nombre de la red
+nav.navbar a.navbar-brand{
+    color: #ffff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+// Contiene el boton toogle del responsivo (no funciona)
+button.navbar-toggler{
+    // background-color: #ffff;
+}
+
+// UL del nav
+ul.navbar-nav{
+    margin: 0px auto;
+}
+
+// LI del nav
+li.nav-item{
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+// A del nav
+a.nav-a{
+    color: #ffffff;
+}
+
+// Cambia el color de los botones del nav
+.mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent {
+    background-color: #3d517d  ;
+}
+
+// Iconos del nav
+.mat-icon-nav {
+    color: #ffffff;
+}
+
+.cerrarSesion{
+    color: #ffffff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+// Selecciona el avatar del nav
+.avatarEditNav{
+    width: 45px;
+    height: 45px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-left: 2px;
+}
+
+// No esta funcionando
+span.footer{
+    border-radius: 0px !important;
+    background-color: #242526  !important;
+    border: none;
+}
+
+p.Pfooter{
+    text-align: center;
+}
+
+
+// ************************************************* //
+// ************************************************* //
+
+// ESTILOS PARA EL LOGIN (login.component) //
+
+// Contiene el login en si
+.loginConteiner{
+    width: 50%;
+    margin: 0px auto;
+    
+}
+
+// Contiene el titulo mostrado en el login
+.titleLogin{
+    text-align: center;
+}
+
+// Contiene la imagen mostrada en el login
+.titleLogin img{
+    width: 20%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+// Aplica solo a los elementos p
+p.Plogin{
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+// Aplica al boton de loguear
+.buttonLogin{
+    width: 100% !important;
+}
+
+// ************************************************* //
+// ************************************************* //
+
+// ESTILOS PARA EL REGISTER (register.component) //
+
+// Contiene a todo la seccion de register, dividiendo en dos al logo y al formulario.
+.contenedorRegister{
+    height: 100%;
+    max-width: 100rem; /*= 1200px*/
+    width: 100%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// Contiene a todo la seccion del formulario
+.register{
+    margin-top: 15px;
+}
+
+.Pregister{
+    font-size: 10px;
+}
+
+.logoFollowme{
+    width: 100%;
+}
+
+// ************************************************* //
+// ************************************************* //
+
+// ESTILOS PARA USER EDIT (user-edit.component) //
+
+// Contiene la imagen de fondo
+.container-user-edit{
+    background-image: url(../assets/img/follow.png);
+    background-size: cover;
+}
+
+// Aplica estilos diferentes al jumbotron de por defecto
+.jumbotron-user-edit{
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+}
+
+.seccionAvatarUserEdit{
+    margin-bottom: 15px;
+    // display: flex; lo trae por defecto la clase row
+    justify-content: space-between;
+    align-items: center;
+}
+
+.labelAvatarUserEdit{
+    float: left;
+    text-transform: uppercase;
+    display: block;
+}
+
+.avatarEdit{
+    width: 140px;
+    border: 1px dashed #1c1c35;
+    border-radius: 100px;
+}
+
+// ************************************************* //
+// ************************************************* //
+
+// ESTILOS PARA EL HOME (home.component) //
+
+mat-divider.divisor{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.titleHome{
+    display: flex;
+    justify-content: space-between;
+}
+
+.refresh{
+    cursor: pointer;
+}
+
+.verPublicaciones{
+    width: 50%;
+    margin: 0px auto;
+}
+
+mat-card.publicaciones{
+    background-color: #6363639e;
+    color: #000;
+    margin-bottom: 15px;
+    margin-bottom: 15px !important;
+}
+
+.infoPublicacion{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #cccc;
+}
+
+.infoPorfilePublication{
+    display: flex;
+    align-items: end;
+}
+
+.image-user-publication img{
+    width: 35px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.infoPublicacion h4{
+    text-align: left;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+h4.time{
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+p.textoPublicacion{
+    font-size: 15px;
+    padding: 15px;
+    text-align: left;
+}
+
+.buttonsPublication{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.showImage{
+    margin-right: 15px;
+    color: green;
+    cursor: pointer;
+}
+
+.hiddenImg{
+    margin-right: 15px;
+    color: #982525;
+    cursor: pointer;
+}
+
+.trashedPubli{
+    color: #982525;
+    cursor: pointer;
+
+}
+
+
+
+
+div.imgPublication img {
+    width: 100%;
+}
+
+.buttonVerMasPublications{
+    width: 100%;
+}
+
+// ************************************************* //
+// ************************************************* //
+
+// ESTILOS PARA LA SECCION DE USERS (users.component) //
+
+// Contenedor total
+.section-follows{
+    background-color: #191919;
+    color: #ffff;
+    display: flex;
+}
+
+// Contenedor de las tarjetas
+.contenedor-follows{
+    margin: 0px auto;
+    padding-top: 20px;
+}
+
+// Tarjetas con los usuarios
+mat-card.user-follow-card{
+    margin-top: 15px;
+    margin-bottom: 15px !important;
+}
+
+// Info de usuario (cotiene al panel y la botonera)
+.info-user-follow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// Panel de info (contiene imagen, user-name y nick)
+.follow-panel-body{
+    display: flex;
+    align-items: center;
+}
+
+// Imagen del usuario
+.image-user-follow img{
+    width: 70px;
+    border-radius: 100%;
+    margin-right: 20px;
+}
+
+// Nombre del usuario
+.user-name-follow a{
+    font-size: 15px;
+    color: #666;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+// Nick del usuario
+.nick-follow{
+    color: #969393;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+// Contenedor de botoneras
+.follows-options-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// Icono de comenzar a seguir
+mat-icon.seguirUsuario{
+    color: #026cd1 !important;
+    margin: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+// Icono de dejar de seguir
+mat-icon.dejarSeguirUsuario{
+    color: red !important;
+    margin: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+// Icono de ya siguiendo usaurio
+mat-icon.siguiendoUsuario{
+    color: green !important;
+    margin: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+// Paginador
+ul.pagination-users-follows{
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+// Boton paginador
+a.paginator-users-follows{
+    color: #ffff;
+    border: 1px solid;
+    padding: 8px;
+    border-radius: 12px;
+    background-color: #000000;
+    text-decoration: none;
+    float: right;
+}
+
+// ************************************************* //
+// ************************************************* //
+
+// ESTILOS PARA EL SIDEBAR (sidebar.component) //
+
+// Contiene la tarjeta total
+.user-card-sidebar{
+    margin-top: 35px
+}
+
+// Contiene solo la imagen
+.imagen-user-sidebar img.avatarUserSideBar{
+    width: 50%;
+    border-radius: 15px;
+    margin: 0px auto;
+    display: block;
+}
+
+.infoPrincipalSideBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+a.nameAndSurnameSideBar {
+    font-size: 30px;
+    text-align: center;
+    display: block;
+    margin: 0px auto;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-top: 20px;
+
+}
+
+mat-icon.configSideBar{
+    width: 15px;
+    font-size: 20px;
+    cursor: pointer;
+} 
+
+a.nickNameSideBar {
+    display: block;
+    text-align: center;
+    color: #4a4a4a;
+    font-size: 15px;
+    padding-top: 15px;
+}
+
+.stats{
+    display: block;
+    text-align: center;
+    margin: 20px;
+    border: 1px solid green;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.followmeInfoSideBar{
+    display: flex;
+    justify-content: space-around;
+}
+
+a.infoCountSideBar{
+    color: #000000;
+    font-size: 15px;
+    font-weight: initial;
+    text-decoration: none;
+}
+
+.labelStats,
+.numberStats{
+    display: block;
+    text-align: center;
+
+}
+
+.numberStats{
+    font-weight: bold;
+    color: green;
+}
+
+// ************************************************* //
+// ************************************************* //
+
+// ESTILOS A CUADRO DE PUBLICACIONES (publication.component)
+
+.publicationConteiner{
+    width: 50%;
+    margin: 0px auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.messagePublication{
+    margin: 0px auto;
+}
+
+label.labelMessagePublication{
+    display: block;
+    text-align: left;
+    font-size: 15px;
+}
+
+.inputPublication{
+    width: 100%;
+    height: 50%;
+    border-radius: 10px;
+}
+
+
+.archivoPublication{
+    margin: 0px auto;
+    margin-bottom: 15px;
+}
+
+.labelArchivoPublication{
+    display: block;
+    text-align: left;
+    font-size: 15px;
+}
+
+.buttonPublication{
+    margin: 0px auto;
+    width: 100% !important;
+}
+
+// ************************************************* //
+// ************************************************* //
+
+// ESTILOS PARA EL PERFIL (profile.component)
+
+.containerProfile{
+    margin: 0px auto;
+}
+
+.dateProfile{
+    display: flex;
+}
+
+.avatarUserProfile img{
+    width: 225px;
+    margin-right: 15px;
+    border-radius: 25px;
+}
+
+.dates .nameAndsurnameProfileDates h3{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.dates .nickNameProfileDate h5{
+    font-size: 20px;
+    color: #3c3c3ceb;
+}
+
+.publicationProfile{
+    margin-top: 15px;
+    display: flex;
+}
+
+.statsEnProfile{
+    width: 100%;
+}
+
+.followProfile{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0px auto;
+}
+
+.followedProfile, .followingProfile{
+    border: 1px solid #cccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 142px;
+    text-align: center;
+    color: #ffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.teSigue {
+    background-color: #45b345;
+}
+
+.noTeSigue{
+    background-color: red;
+
+}
+
+.seguir{
+    background-color: rgb(0, 174, 255);
+}
+
+.dejarDeSeguir{
+    background-color: #949494;
+}
+
+// ************************************************* //
+// ************************************************* //
+
+// ESTILOS PARA LOS MENSAJES
+
+.mensajesComponent{
+    margin-bottom: 140px;
+}
+
+h1.h1-message{
+    margin: 20px 50px;
+}
+
+ul.nav-message{
+    display: block;
+    margin-left: 10px;   
+    list-style: none; 
+    cursor: pointer;
+}
+
+ul.nav-message li{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+ul.nav-message li.active{
+    background-color: #766af152;
+    font-weight: inherit;
+    font-size: 15px;
+}
+
+ul.nav-message li a{
+    color: #000000;
+    text-decoration: none;
+}
+
+h3.titleOption{
+    padding-top: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+mat-card.mensaje{
+    margin-bottom: 10px;
+}
+
+div.mensajeContainer{
+    padding-bottom: 15px;
+}
+
+div.paginator{
+    padding-top: 15px;
+}
+
+// Enviar mensajes seccion
+
+textarea.mensaje{
+    height: 100px;
+}
+
+button.enviarMje{
+    margin-bottom: 20px;
+}
+
+
+// Mensajes recibidos seccion
+
+.infoEnvio{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.datosEmitter{
+    display: flex;
+    align-items: baseline;
+    cursor: pointer;
+}
+
+.datosEmitter .image-user-emitter img{
+    width: 35px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.datosEmitter h4{
+    font-weight: inherit;
+    font-size: 15px;
+}
+
+.mensajeFinal p{
+    text-align: center;
+    margin: 20px;
+}
+
+
+

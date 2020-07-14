@@ -1,0 +1,72 @@
+
+<div class="col-sm-12 col-md-12 col-lg-12 section-follows contenedorTotal">
+    <div class="col-sm-12 col-md-7 col-lg-7 contenedor-follows">
+
+        <h1 class="h1-strong">Usuarios a los que sigue {{user?.name + ' ' + user?.surname}}</h1>
+
+        <div class="people" *ngIf="following">
+            <div *ngFor="let follow of following" class="item-user">
+                <mat-card class="user-follow-card" *ngIf="follow.followed._id != identity._id">
+                    <div class="info-user-follow">
+                        <div class="follow-panel-body">
+                            <div class="image-user-follow">
+                                <a [routerLink]="['/profile', follow.followed._id]" *ngIf="!follow.followed.image">
+                                    <img src="../../../assets/img/unnamed.png">
+                                </a>
+                                <a [routerLink]="['/profile', follow.followed._id]" *ngIf="follow.followed.image">
+                                    <img src="{{ url+'get-image-profile/'+follow.followed.image }}">
+                                </a>
+                            </div>
+                            <div>
+                                <div class="user-name-follow">
+                                    <a [routerLink]="['/profile', follow.followed._id]">
+                                        {{follow.followed.name + ' ' + follow.followed.surname}}
+                                    </a>
+                                </div>
+                                <div class="nick-follow">
+                                    {{follow.followed.nick}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="follows-options-button" *ngIf="follow.followed._id != identity._id">
+                            <div *ngIf="follows.indexOf(follow.followed._id) < 0" >
+                                <mat-icon matTooltip="Comenzar a seguir" class="seguirUsuario" (click)="followUser(follow.followed._id)">add</mat-icon>
+                            </div>
+                            <div *ngIf="follows.indexOf(follow.followed._id) >= 0" 
+                                (mouseenter)="mouseEnter(follow.followed._id)"
+                                (mouseleave)="mouseLeave(follow.followed._id)">
+                                <span *ngIf="follow.followed._id == followUserOver; else following">
+                                    <mat-icon matTooltip="Dejar de seguir" class="dejarSeguirUsuario" (click)="unFollowUser(follow.followed._id)">clear</mat-icon>
+                                </span>
+                                <ng-template #following>
+                                    <span>
+                                        <mat-icon matTooltip="Siguiendo" class="siguiendoUsuario">how_to_reg</mat-icon>
+                                    </span>
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+        <!-- paginacion -->
+        <ul class="pagination-users-follows">
+            <li style="color: black;" *ngIf="page > 1">
+                <a class="paginator-users-follows" [routerLink]="['/siguiendo',userPageId ,prevPage]">
+                    Anterior
+                </a>
+            </li>
+            <li style="color: black;" *ngIf="pages != page">
+                <a class="paginator-users-follows" [routerLink]="['/siguiendo', userPageId, nextPage]">
+                    Siguiente
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+    
+    <div class="col-sm-12 col-md-5 col-lg-5">
+        <sidebar></sidebar>
+    </div>
+</div>
+

@@ -1,0 +1,57 @@
+<div class="user-card-sidebar col-lg-12 contenedorTotal">
+    <mat-card>
+
+        <div class="imagen-user-sidebar col-lg-12" >
+            <img class="avatarUserSideBar" src="../../../../assets/img/unnamed.png" *ngIf="!identity.image">
+
+            <img class="avatarUserSideBar" src="{{url+'get-image-profile/'+identity.image}}" *ngIf="identity && identity.image">
+        </div>
+
+        <div class="dataUserSidebar col-lg-12">
+            <div class="infoPrincipalSideBar">
+                <a class="nameAndSurnameSideBar" href="">{{identity.name + ' ' + identity.surname}}</a>
+                <mat-icon class="configSideBar" matTooltip="Configuracion" (click)="editProfile()">settings</mat-icon>
+            </div>
+    
+            <div>
+                <a class="nickNameSideBar" href="">@{{identity.nick}}</a>
+            </div>
+        </div>
+
+        <div class="stats" *ngIf="stats">
+            <div class="followmeInfoSideBar">
+                <a [routerLink]="['/siguiendo', identity._id, 1]" class="infoCountSideBar">
+                    <span class="labelStats">
+                        Siguiendo
+                    </span>
+                    <span class="numberStats">
+                        {{stats.following}}
+                    </span>
+                </a>
+
+                <a [routerLink]="['/seguidores', identity._id, 1]" class="infoCountSideBar">
+                    <span class="labelStats">
+                        Seguidores
+                    </span>
+                    <span class="numberStats">
+                        {{stats.followed}}
+                    </span>
+                </a>
+
+                <a [routerLink]="['/profile', identity._id]" class="infoCountSideBar">
+                    <span class="labelStats">
+                        Publicaciones
+                    </span>
+                    <span class="numberStats">
+                        {{stats.publication}}
+                    </span>
+                </a>
+            </div>
+        </div>
+
+
+
+
+
+    </mat-card>
+</div>

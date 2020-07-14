@@ -1,0 +1,18 @@
+
+<h3>Eliminar Publicacion</h3>
+<mat-divider></mat-divider>
+<br>
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+        <h2 class="mat-h2">Se eliminará la publicacion de forma permanente</h2>
+        <h2 class="mat-h2">¿Desea confirmar?</h2>
+        {{publication.text}}
+    </div>
+</div>
+    
+<mat-divider></mat-divider>
+<br>
+<div class="col-sm-12 col-md-12 col-lg-12 text-right">
+    <button mat-button (click)="cancel()">Cancelar</button>
+    <button (click)="confirmar()" mat-button color="primary">Aceptar</button>
+</div>

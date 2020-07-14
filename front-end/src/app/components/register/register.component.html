@@ -1,0 +1,91 @@
+<div class="containerGeneral contenedorTotal">
+    <div class="row contenedorRegister">
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <img class="logoFollowme" src="../../../assets/img/LogoFollowmeBkanca.png">
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="register">
+                <h1 class="h1-strong">Registrate para comenzar!</h1>
+
+                <div class="entrada-blog">
+                    <form [formGroup]="registerForm" (ngSubmit)="register()">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Nombre</mat-label>
+                                    <input matInput type="text" placeholder="Nombre" autocomplete="off" formControlName="name" >
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Apellido</mat-label>
+                                    <input matInput type="text" placeholder="Apellido" autocomplete="off" formControlName="surname">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Correo electronico</mat-label>
+                                    <input matInput (ngModelChange)="validarUserName($event)" type="email" placeholder="ejemplo@ejemplo.com" autocomplete="off" formControlName="email">
+                                </mat-form-field>
+
+                                <p  class="Pregister"style="color: red; margin-block-start: -1em;" *ngIf="emailValid == false">
+                                    El correo no tiene un formato valido.
+                                </p>
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Nombre de usuario</mat-label>
+                                    <input matInput type="text" placeholder="Nombre de usuario" autocomplete="off" formControlName="nick">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Contraseña</mat-label>
+                                    <input matInput (ngModelChange)="validarPassword($event)" type="password" placeholder="Contraseña" autocomplete="new-password" formControlName="password">
+                                </mat-form-field>
+
+                                <p  class="Pregister"style="color: red; margin-block-start: -1em;" *ngIf="passValid == false">
+                                    La contraseña debe contener min. 8 caractertes, Mayusculas, Minusculas, alfanumerica.
+                                </p>
+                            </div>
+
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Repetir Contraseña</mat-label>
+                                    <input matInput (ngModelChange)="validarRepeatPass($event)" type="password" placeholder="Repetir Contraseña" autocomplete="off" formControlName="repeatPassword">
+                                </mat-form-field>
+
+                                <p  class="Pregister"style="color: red; margin-block-start: -1em;" *ngIf="repeatPassValid == false">
+                                    Las contraseñas no coinciden.
+                                </p>
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 col-lg-12">     
+                                <p class="Pregister">
+                                    Al hacer click en Registrarte, aceptas las Condiciones, 
+                                    la Política de datos y la Política de cookies. 
+                                    Es posible que te enviemos notificaciones por SMS que 
+                                    podrás desactivar cuando quieras.
+                                </p>
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 col-lg-12" align="right">
+                                <button type="submit" mat-raised-button color="primary">Registrarte</button>
+
+                                &nbsp;
+
+                                <button type="button" mat-raised-button (click)="cancel()">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

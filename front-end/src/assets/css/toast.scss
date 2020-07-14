@@ -1,0 +1,5 @@
+@import "~ngx-toastr/toastr.css";
+$font-stack: 'Franklin Gothic Medium';
+.toast-container * {
+  font-family: $font-stack
+}

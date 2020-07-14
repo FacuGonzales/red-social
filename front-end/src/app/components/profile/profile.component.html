@@ -1,0 +1,82 @@
+<div class="row contenedorTotal">
+    <div class="col-lg-8 containerProfile">
+        <h1 class="h1-strong">Perfil de usuario</h1>
+
+        <div class="dateProfile">
+            <div class="avatarUserProfile">
+                <img *ngIf="!user?.image" src="../../../assets/img/unnamed.png">
+                
+                <img *ngIf="user?.image" src="{{ url+'get-image-profile/'+user?.image }}">
+            </div>
+
+            <div class="dates">
+                <div class="nameAndsurnameProfileDates">
+                    <h3>{{user?.name + ' ' + user?.surname}}</h3>
+                </div>
+
+                <div class="nickNameProfileDate">
+                    <h5>@{{user?.nick}}</h5>
+                </div>
+
+                <div class="stats statsEnProfile" *ngIf="stats">
+                    <div class="followmeInfoSideBar">
+                        <a [routerLink]="['/siguiendo', user._id, 1]" class="infoCountSideBar">
+                            <span class="labelStats">
+                                Siguiendo
+                            </span>
+                            <span class="numberStats">
+                                {{stats.following}}
+                            </span>
+                        </a>
+        
+                        <a [routerLink]="['/seguidores', user._id, 1]" class="infoCountSideBar">
+                            <span class="labelStats">
+                                Seguidores
+                            </span>
+                            <span class="numberStats">
+                                {{stats.followed}}
+                            </span>
+                        </a>
+        
+                        <a [routerLink]="['/profile', user._id]" class="infoCountSideBar">
+                            <span class="labelStats">
+                                Publicaciones
+                            </span>
+                            <span class="numberStats">
+                                {{stats.publication}}
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="followProfile" *ngIf="user?._id != identity._id">
+                    <div class="followedProfile" [ngClass]="{'teSigue': followed == true, 'noTeSigue': followed == false}"> 
+                        <div *ngIf="followed == true">
+                            <span>TE SIGUE</span>
+                        </div>
+    
+                        <div *ngIf="followed == false">
+                            <span>NO TE SIGUE</span>
+                        </div>
+                    </div>
+
+                    <div class="followingProfile" [ngClass]="{'dejarDeSeguir': following == true, 'seguir': following == false}">
+                        <div *ngIf="following == true"  (click)="dejarDeSeguir(user?._id)" >
+                            <span>DEJAR DE SEGUIR</span>
+                        </div>
+        
+                        <div *ngIf="following == false" (click)="seguir(user?._id)">
+                            <span>COMENZAR A SEGUIR</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="listadoPublicaciones" *ngIf="user">
+            <list-publications [user]="user._id" class="listadoPubli"></list-publications>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<!-- <div class="col-lg-8" style="margin: 0 auto;">
+    <div class="jumbotron"> -->
+
+        <div class="verPublicaciones contenedorTotal">
+            <div class="titleHome">
+                <h1 class="h1-strong">Ultimas publicaciones</h1>
+
+                <mat-icon class="refresh" (click)="actualizarListado()">refresh</mat-icon>
+            </div>
+            <div *ngIf="publications.length > 0">
+                <div *ngFor="let publication of publications">
+                    <mat-card class="publicaciones">
+                        <div class="infoPublicacion">
+                            <div class="infoPorfilePublication">
+                                <div class="image-user-publication">
+                                    <a href="#" *ngIf="!publication.user.image">
+                                        <img src="../../../assets/img/unnamed.png">
+                                    </a>
+                                    <a href="#"  *ngIf="publication.user.image">
+                                        <img src="{{ url+'get-image-profile/'+publication.user.image }}">
+                                    </a>
+                                </div>
+                            
+                                <h4>{{publication.user.name + ' ' + publication.user.surname}}</h4>
+                            </div>
+                        
+                            <!-- <h4>{{ (publication.created_at | amFromUnix) | amTimeAgo}}</h4> -->
+                        
+
+                        </div>
+                    
+                        <p class="textoPublicacion">{{publication.text}}</p>
+
+                        <div class="sectionImgPublication">
+                            <div class="buttonsPublication">
+                                
+                                <div matTooltip="Elimnar publicacion" class="trashedPubli" (click)="deletePublication(publication)" *ngIf="publication.user._id == identity._id">
+                                    <mat-icon>delete_sweep</mat-icon> 
+                                </div>
+                            
+                            </div>
+                            
+                            <div class="imgPublication" *ngIf="publication.file != 'null'">
+                                <img src="{{url+'get-image-publication/'+publication.file}}">
+                            </div>
+                        </div>
+                    </mat-card>
+                
+                
+                </div>
+            
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <button class="buttonVerMasPublications" type="button" mat-raised-button (click)="viewMore()" *ngIf="!noMore">Ver más</button>
+                </div>
+            </div>
+
+            <div *ngIf="publications.length == 0" style="font-size: 15px; margin-bottom: 50px;">
+                No posee publicaciones
+            </div>
+        </div>
+    <!-- </div>
+</div> -->

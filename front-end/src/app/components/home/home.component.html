@@ -1,0 +1,79 @@
+<div class="containerGeneral contenedorTotal">
+    <div class="row">
+
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8" style="margin: 0 auto;">
+            <div class="jumbotron">
+
+                <h3>Hola de nuevo {{identity.name}}!!</h3>
+
+                <div class="hacerPublicacion">
+                    <publication (enviado)="refresh($event)"></publication>
+                </div>
+
+                <mat-divider class="divisor"></mat-divider>
+
+                <div class="verPublicaciones">
+                    <div class="titleHome">
+                        <h1 class="h1-strong">Ultimas noticias</h1>
+
+                        <mat-icon class="refresh" (click)="actualizarListado()">refresh</mat-icon>
+                    </div>
+                    <div *ngFor="let publication of publications">
+                        <mat-card class="publicaciones">
+                            <div class="infoPublicacion">
+                                <div class="infoPorfilePublication">
+                                    <div class="image-user-publication">
+                                        <a href="#" *ngIf="!publication.user.image">
+                                            <img src="../../../assets/img/unnamed.png">
+                                        </a>
+                                        <a href="#"  *ngIf="publication.user.image">
+                                            <img src="{{ url+'get-image-profile/'+publication.user.image }}">
+                                        </a>
+                                    </div>
+                    
+                                    <h4>{{publication.user.name + ' ' + publication.user.surname}}</h4>
+                                </div>
+                    
+                                <h4 class="time">{{ (publication.created_at | amFromUnix) | amTimeAgo}}</h4>
+                                
+                            </div>
+                    
+                            <p class="textoPublicacion">{{publication.text}}</p>
+
+                            <div class="sectionImgPublication">
+                                <div class="buttonsPublication">
+                                    <div matTooltip="Ver archivos" class="showImage" (click)="showImg(publication._id)" *ngIf="publication.file != 'null' && showImage != publication._id">
+                                        <mat-icon>perm_media</mat-icon> 
+                                    </div>
+                                
+                                    <div matTooltip="Ocultar archivos" class="hiddenImg" (click)="hiddenImg()" *ngIf="publication.file != 'null' && showImage == publication._id">
+                                        <mat-icon>clear</mat-icon> 
+                                    </div>
+                                
+                                    <div matTooltip="Elimnar publicacion" class="trashedPubli" (click)="deletePublication(publication)" *ngIf="publication.user._id == identity._id">
+                                        <mat-icon>delete_sweep</mat-icon> 
+                                    </div>
+                                
+                                </div>
+
+                                <div class="imgPublication" *ngIf="publication.file != 'null' && showImage == publication._id">
+                                    <img src="{{url+'get-image-publication/'+publication.file}}">
+                                </div>
+                            </div>
+                        </mat-card>
+                    
+                       
+                    </div>
+                    
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <button class="buttonVerMasPublications" type="button" mat-raised-button (click)="viewMore()" *ngIf="!noMore">Ver más</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2"></div>
+    
+    </div>
+</div>

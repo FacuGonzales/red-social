@@ -1,0 +1,68 @@
+
+<nav class="navbar navbar-expand-lg" *ngIf="identity">
+
+    <a class="navbar-brand" href="#" [routerLink]="['/home']">FOLLOWME</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-a" [routerLink]="['/home']">
+                    <button mat-mini-fab [routerLink]="['/home']" class="home" matTooltip="Inicio">
+                        <mat-icon class="mat-icon-nav">home</mat-icon>
+                    </button>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-a" [routerLink]="['/mensajes']">
+                    <button mat-mini-fab [routerLink]="['/home']" class="messages" matTooltip="Mensajes">
+                        <mat-icon class="mat-icon-nav">mail</mat-icon>
+                    </button>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-a" [routerLink]="['/profile', identity._id]">
+                    <button mat-mini-fab  class="user" matTooltip="Perfil">
+                        <mat-icon class="mat-icon-nav">person</mat-icon>
+                    </button>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-a" [routerLink]="['/users']">
+                    <button mat-mini-fab  class="user" matTooltip="Encontrar más personas">
+                        <mat-icon class="mat-icon-nav">add</mat-icon>
+                    </button>
+                </a>
+            </li>
+
+        </ul>
+
+        <span class="navbar-text">
+            <span class="cerrarSesion" (click)="logOut()">Cerrar Sesion</span>
+
+            <span class="avatar">
+                <img class="avatarEditNav" src="../../../assets/img/unnamed.png"  *ngIf="!identity.image">
+
+                <img class="avatarEditNav" src="{{url + 'get-image-profile/' + identity.image}}" *ngIf="identity && identity.image">
+            </span>
+        </span>
+
+    </div>
+</nav>
+
+
+<router-outlet></router-outlet>
+
+
+<span class="footer">
+    <p class="Pfooter">FOLLOWME &copy; {{years | date:'yyyy'}} - Todos los derechos reservados</p>
+</span>
+    
+
+

@@ -1,0 +1,49 @@
+<div class="col-lg-12 containerGeneral contenedorTotal">
+
+    <div class="col-lg-12 loginConteiner">
+
+        <div class="titleLogin">
+            
+            <img src="../../../assets/img/followme _logo.png" alt="">
+            <h1>Iniciar sesión en Followme</h1>
+        
+        </div> <!--fin del div = titleLogin-->
+
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Correo electronico</mat-label>
+                        <input  matInput type="email" 
+                                placeholder="ejemplo@ejemplo.com" 
+                                autocomplete="new-text"
+                                spellcheck="false" 
+                                value=""
+                                formControlName="email">
+                    </mat-form-field>
+                </div>
+               
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput type="password" placeholder="Contraseña" autocomplete="new-password" formControlName="password">
+                    </mat-form-field>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-6">     
+                    <p class="Plogin" (click)="resetPassword()">¿Olvidaste tu contraseña?</p>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-6">     
+                    <p class="Plogin" (click)="redirectToRegister()">Regístrate en Followme</p>
+                </div>
+
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <button class="buttonLogin" type="submit" mat-raised-button color="primary" [disabled]="!loginForm.valid">Iniciar sesión</button>
+                </div>
+            </div> <!--fin del div = row-->
+        </form>
+
+    </div> <!--fin de div=loginContainer-->
+
+</div> <!--fin de div=containerPageLogin-->

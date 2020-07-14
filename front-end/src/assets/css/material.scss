@@ -1,0 +1,250 @@
+//@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+// @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+// @import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+// @import "~@angular/material/prebuilt-themes/purple-green.css";
+
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+//typografy $font-family: 'Cambria, Cochin, Georgia, Times, 'Times New Roman', serif', -> agregar en linea que sobra
+$custom-typography: mat-typography-config(
+	
+	$display-4:     mat-typography-level(112px, 112px, 300),
+  $display-3:     mat-typography-level(56px, 56px, 400),
+  $display-2:     mat-typography-level(45px, 48px, 400),
+  $display-1:     mat-typography-level(34px, 40px, 400),
+  $headline:      mat-typography-level(22px, 28px, 400),
+  $title:         mat-typography-level(18px, 28px, 500),
+  $subheading-2:  mat-typography-level(16px, 28px, 400),
+  $subheading-1:  mat-typography-level(15px, 24px, 400),
+  $body-2:        mat-typography-level(12px, 22px, 500),
+  $body-1:        mat-typography-level(12px, 18px, 400),
+  $caption:       mat-typography-level(12px, 20px, 400),
+  $button:        mat-typography-level(12px, 12px, 500),
+  // Line-height must be unit-less fraction of the font-size.
+  $input:         mat-typography-level(12px, 1.325, 400)
+);
+@include mat-core($custom-typography);
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$allende-app-primary: mat-palette($mat-light-blue, 700);
+$allende-app-accent:  mat-palette($mat-deep-orange, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$allende-app-warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$allende-app-theme: mat-light-theme($allende-app-primary, $allende-app-accent, $allende-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+
+// Ver ejemplos aplicados https://www.materialpalette.com
+@include angular-material-theme($allende-app-theme);
+
+// Define an alternate dark theme.
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+$dark-warn:    mat-palette($mat-deep-orange);
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+// Include the alternative theme styles inside of a block with a CSS class. You can make this
+// CSS class whatever you want. In this example, any component inside of an element with
+// `.unicorn-dark-theme` will be affected by this alternate dark theme instead of the default theme.
+.dark-theme {
+  @include angular-material-theme($dark-theme);
+}
+
+// .mat-toolbar.mat-primary {
+//   background: #0277bd !important;
+//   color: #fff;
+// }
+
+.mat-form-field {
+    display: block !important;
+}
+
+.mat-cell, .mat-footer-cell {
+  font-size: 11px;
+}
+
+button {
+  font-size: 12px !important;
+}
+
+.mat-tab-body-content {
+  overflow: inherit !important;
+}
+
+.mat-card {
+	padding: 6px !important;
+	margin-bottom: 4px !important;
+}
+
+table {
+  width: 100%;
+}
+
+.test-width {
+	.mat-form-field-infix {
+		width: inherit !important;
+	}
+
+}
+
+.sa-mat-header-table {
+
+		padding-left: 5px !important;
+    padding-right: 10px !important;
+		font-size: 13px !important;
+    color: #6b6f82 !important;
+    font-weight: 900 !important;
+
+}
+
+td.mat-cell:first-of-type{
+	padding-left: 5px !important;
+}
+
+td.mat-cell:last-of-type{
+	padding-right: 15px !important;
+}
+
+.table-mat-generica{
+	.mat-button {
+		min-width: 25px !important;
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+	}
+}
+
+
+.btn-ok {
+	&::ng-deep .mat-button-wrapper{
+		color: red !important;
+	}
+	&::ng-deep .mat-button-focus-overlay{
+		background-color: red !important;
+	}
+	&::ng-deep .mat-ripple-element{
+		color: red !important;
+	}
+}
+
+.mat-card-no-padding {
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+	padding-bottom: 0px !important;
+}
+
+.mat-card > .mat-divider-horizontal{
+	position: relative !important;
+}
+
+.tree-node-small {
+	&::ng-deep .mat-tree-node{
+		min-height: 40px !important;
+	}
+}
+
+.table-mat-with-border {
+	border: #e0e0e0;
+	border-style: solid;
+	border-width: 1px !important;
+	border-radius: 15px !important;
+	padding: 6px !important;
+	tr.mat-row{
+		height: 28px !important;
+	}
+	.mat-cell{
+		font-size: 12px !important;
+	}
+	th.mat-header-cell {
+		font-size: 14px !important;
+	}
+	tr.mat-header-row {
+		height: 36px !important;
+
+	}
+
+}
+
+.my-fab {
+	width: 30px !important;
+	height: 30px !important;
+	line-height: 14px !important;
+	font-size: 14px !important;
+
+	&::ng-deep .mat-button-wrapper{
+			line-height: 14px !important;
+			padding: 0px 0px !important;
+
+			 .mat-icon {
+					 font-size: 10px !important;
+					 padding-right: 0px !important;
+					 padding-top: 0px !important;
+			 }
+ }
+
+ .mat-button-wrapper {
+	 padding: 0px 0px !important;
+ }
+
+}
+
+.custom-modalbox-azul >  mat-dialog-container {
+	background-color: #b7dbf3 !important;
+	padding-top: 6px !important;
+  padding-bottom: 4px !important;
+}
+
+.mat-autocomplete-min > mat-option
+{
+	font-size: 12px !important;
+	height: 35px !important
+}
+
+.mat-row:nth-child(even){
+	//par
+	background-color: rgba(242,242,242,.5);
+	}
+
+[mat-header-cell] {
+	padding-left: 5px !important;
+	padding-right: 10px !important;
+	font-size: 13px !important;
+	color: #6b6f82 !important;
+	font-weight: 900 !important;
+}
+
+[mat-header-row] {
+	height: 40px !important;
+	min-height: 40px !important;
+}
+
+// $mat-red
+// $mat-pink
+// $mat-purple
+// $mat-deep-purple
+// $mat-indigo
+// $mat-blue
+// $mat-light-blue
+// $mat-cyan
+// $mat-teal
+// $mat-green
+// $mat-light-green
+// $mat-lime
+// $mat-yellow
+// $mat-amber
+// $mat-orange
+// $mat-deep-orange
+// $mat-brown
+// $mat-grey
+// $mat-blue-grey
